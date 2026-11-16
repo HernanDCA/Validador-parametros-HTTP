@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validador de Parámetros HTTP</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 500px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #f8fafc;
+    }
+    .card {
+      background: white;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #334155;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      width: 100%;
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1d4ed8;
+    }
+    .resultado-box {
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #f1f5f9;
+      border-left: 4px solid #2563eb;
+      font-family: monospace;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>Probar Configuración</h2>
+
+    <form id="formPaginacion">
+      <div class="form-group">
+        <label for="pagina">Página (ej. 3, "", 0, null):</label>
+        <input type="text" id="pagina" placeholder='Ej: "" o 3'>
+      </div>
+
+      <div class="form-group">
+        <label for="limite">Límite (ej. 0, 10, dejar vacío):</label>
+        <input type="text" id="limite" placeholder='Ej: 0 (o dejar vacío)'>
+      </div>
+
+      <div class="form-group">
+        <label for="mostrarOcultos">Mostrar Ocultos:</label>
+        <select id="mostrarOcultos">
+          <option value="true">Cadena "true"</option>
+          <option value="boolean_true">Booleano true</option>
+          <option value="false">Cadena "false"</option>
+          <option value="boolean_false">Booleano false</option>
+          <option value="otro">Otro valor ("yes", 1, etc.)</option>
+        </select>
+      </div>
+
+      <button type="submit">Calcular Configuración</button>
+    </form>
+
+    <div class="resultado-box">
+      <strong>Resultado:</strong>
+      <p id="resultado">Ingresa parámetros y presiona el botón.</p>
+    </div>
+  </div>
+
+  <!-- Vinculación del archivo JavaScript independiente -->
+  <script src="script.js"></script>
+</body>
+</html>
